@@ -17,7 +17,12 @@ LIB = ./libft
 LIBPATH = libft/libft.a
 
 SRC = main.c \
-
+parser.c \
+mandelbrot.c \
+zoom_iteration.c \
+julia.c \
+basics.c \
+burningship.c
 
 OBJ = $(SRC:.c=.o)
 CC = gcc
