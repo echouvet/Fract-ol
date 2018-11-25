@@ -67,8 +67,6 @@ int		mouse_hook(int k, int x, int y, t_env *e)
 	if (k == 2)
 		zoom_less(e, x, y);
 	e->fractal(e);
-	ft_putnbr(k);
-	ft_putchar('\n');
 	return (0);
 }
 
