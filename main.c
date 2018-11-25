@@ -12,8 +12,10 @@
 
 #include "fractol.h"
 
-int		close(t_env *e)
+int		closed(t_env *e)
 {
+	mlx_destroy_image(e->mlx, e->img);
+	mlx_destroy_window(e->mlx, e->win);
 	exit(42);
 	return (0);
 }
@@ -51,8 +53,6 @@ int		keyhooks(int keycode, t_env *e)
 	if (keycode == 260)
 		e->pause *= -1;
 	e->fractal(e);
-	ft_putnbr(keycode);
-	ft_putchar('\n');
 	return (0);
 }
 
@@ -90,7 +90,7 @@ int		main(int argc, char **argv)
 	mlx_mouse_hook(e.win, mouse_hook, &e);
 	mlx_hook(e.win, 2, 0, keyhooks, &e);
 	mlx_hook(e.win, 6, 64, move_hook, &e);
-	mlx_hook(e.win, close, &e);
+	mlx_hook(e.win, 17, 0, closed, &e);
 	e.fractal(&e);
 	mlx_loop(e.mlx);
 	return (0);

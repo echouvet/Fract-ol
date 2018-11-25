@@ -27,13 +27,13 @@ burningship.c
 OBJ = $(SRC:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-EXT = -lmlx -framework OpenGL -framework Appkit
+EXT = -framework OpenGL -framework Appkit
 
 all: $(NAME)
 	
 $(NAME): $(OBJ)
 	@make -C $(LIB)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBPATH) $(EXT)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBPATH) $(EXT) mlx/libmlx.a
 
 clean:
 	rm -rf $(OBJ)
