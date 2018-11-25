@@ -1,6 +1,7 @@
 # Fract-ol
 
 Ce Projet est un petit logiciel d’exploration fractale. Le sujet est present a la racine.
+Works on MacOS
 
 -  To compile : type 'make' at the root directory
 -  To excecute : type './fractol' followed by one of the following arguments : julia / mandelbrot / burningship
